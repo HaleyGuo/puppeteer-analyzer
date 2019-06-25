@@ -5,6 +5,7 @@ const getPerformance = require('./getPerformance');
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
     console.log(await getPerformance(page));
-
+    page.on('metrics',(data)=>{console.log(data)})
+    console.timeStamp('listLinksSpa');
     await browser.close();
 })();
