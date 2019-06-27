@@ -43,23 +43,6 @@ async function getPerformance(page) {
   return {
     listLinksSpa: (listLinksSpa.Timestamp *1000) - navigationStart,
   };
-  // 第一版
-  // const performanceTiming = JSON.parse(
-  //   await page.evaluate(() => JSON.stringify(window.performance.timing))
-  // );
-  // return extractDataFromPerformanceTiming(
-  //   performanceTiming,
-  //   'responseEnd',
-  //   'domInteractive',
-  //   'domContentLoadedEventEnd',
-  //   'loadEventEnd'
-  // );
-
-  // 第二版
-  // return extractDataFromPerformanceMetrics(
-  //   performanceMetrics,
-  //   'FirstMeaningfulPaint'
-  // );
 }
   
 module.exports = getPerformance;
