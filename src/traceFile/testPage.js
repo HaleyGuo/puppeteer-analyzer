@@ -6,12 +6,12 @@ const {
   async function testPage(page) {
     await page.tracing.start({ path: './trace.json' });
   
-    await page.goto('https://note.youdao.com/web/#/file/recent/note/0538AC4396B3481AA3C276AF73425736/');
+    await page.goto('http://test.note.youdao.com/mobileVIP/');
   
     await page.tracing.stop();
     const cssTracing = await extractDataFromTracing(
       './trace.json',
-      'common.3a2d55439989ceade22e.css'
+      'index.js'
     );
   
     const performanceMetrics = await page._client.send('Performance.getMetrics');
